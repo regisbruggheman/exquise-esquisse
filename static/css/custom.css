@@ -1,0 +1,311 @@
+/*
+* From the Bootstrap 4.0 blog example
+* See: https://getbootstrap.com/docs/4.0/examples/blog/blog.css
+*/
+
+/*
+* Globals
+*/
+
+@media (min-width: 48em) {
+  html {
+    font-size: 18px;
+  }
+}
+
+body {
+  position: relative;
+  background-color: #F8CE1C;
+  color: #000;
+  font-family: 'Value-Serif';
+}
+
+.font-boutique {
+  font-family: 'Boutique-Normal' !important;
+}
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: 'Boutique-Normal';
+  font-weight: normal;
+  color: #000;
+  a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/*
+* Override Bootstrap's default container.
+*/
+
+.container {
+  max-width: 1200px;
+}
+/* Example icon styling */
+.ion {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  stroke-width: 0;
+  stroke: #000;
+  fill: #000;
+}
+
+.body-content {
+  margin-top: 135px;
+}
+/*
+* Masthead for nav
+*/
+
+.navbar { 
+  margin-bottom: 1rem;
+  background-color: #fff;
+}
+.navbar-shrink {
+  background-color: rgba(255, 255, 255, 1) !important;
+}
+.navbar-brand {
+  text-align: center;
+  color: #000;
+  font-family: 'Boutique-Normal' !important;
+  font-size: 12px;
+  background-color: #fff;
+  padding: 16px;
+}
+.logo-name {
+  margin-bottom: 16px;
+  display: none;
+}
+.logo-sutitle {
+  margin-top: 16px;
+  display: none;
+}
+.navbar-brand-img {
+  max-width: 200px;
+}
+@media (min-width: 992px) {
+  .navbar {
+    background-color: transparent;
+  }
+  .navbar-brand {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .navbar-brand-img {
+    max-width: 320px;
+  }
+  .logo-name {
+    display: block;
+  }
+  .logo-sutitle {
+    display: block;
+  }
+}
+
+/*----- NAVBAR TOGGLER -----*/
+.icon-bar {
+  width: 22px;
+  height: 2px;
+  background-color: #000;
+  display: block;
+  margin-top: 4px;
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.navbar-toggler {
+  border: none;
+  background: transparent !important;
+}
+.navbar-toggler .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
+}
+.navbar-toggler .middle-bar {
+  opacity: 0;
+}
+.navbar-toggler .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
+}
+.navbar-toggler.collapsed .top-bar {
+  transform: rotate(0);
+}
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1;
+}
+.navbar-toggler.collapsed .bottom-bar {
+  transform: rotate(0);
+}
+/*----- SCROLL TO TOP -----*/
+.scroll-to-top {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  display: none;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  color: white;
+  background: rgba(255, 255, 255, 0.5);
+  line-height: 45px;
+}
+.scroll-to-top .ion {
+  stroke: #FFF;
+  fill: #FFF;
+}
+.scroll-to-top:focus, .scroll-to-top:hover {
+  color: white;
+}
+
+.scroll-to-top:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+
+/* Nav links */
+.nav-link {
+  position: relative;
+  padding: 1rem;
+  color: #000;
+  font-family: 'Boutique-Normal';
+  text-transform: uppercase;
+  font-size: .80rem;
+  vertical-align: middle;
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: #fff;
+  background-color: transparent;
+}
+
+/* Active state gets a caret at the bottom */
+.nav-link.active {
+  color: #000;
+}
+
+/*
+* Blog name and description
+*/
+.blog-post {
+  margin: 0 0 1rem 0;
+
+}
+.blog-post-overlay {
+  position: relative;
+  display: block;
+}
+
+.blog-post-header {
+  padding: 1.25rem;
+  margin: 0;
+  border: none;
+  background-color: #FFF ;
+  overflow: hidden;
+}
+@media (min-width: 576px) {
+  .blog-post-figure {
+    max-width: 75% !important;
+  }
+  .blog-post-header {
+    position: absolute;
+    z-index: 1;
+    bottom: 2rem;
+    width: 30%;
+    height: 70%;
+  }
+  .blog-post:nth-child(odd) .blog-post-header {
+    right: 0;
+    left: auto;
+  }
+  .blog-post:nth-child(odd) .blog-post-figure {
+    margin-right: 25%;
+  }
+  .blog-post:nth-child(even) .blog-post-header {
+    left: 0;
+    right: auto;
+  }
+  .blog-post:nth-child(even) .blog-post-figure {
+    margin-left: 25%;
+  }
+}
+
+.blog-post-title {
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-right: 2rem;
+}
+
+.blog-post-meta {
+  margin-bottom: 0;
+  color: #000;
+  line-height: 1.3;
+  font-size: .9rem;
+}
+.blog-title {
+  margin-bottom: 0;
+  font-size: 2rem;
+  font-weight: normal;
+}
+.blog-description {
+  font-size: 1.1rem;
+  color: #999;
+}
+
+@media (min-width: 40em) {
+  .blog-title {
+    font-size: 3.5rem;
+  }
+}
+
+/*
+* Blog posts
+*/
+
+.post-content {
+  background-color: #FFF;
+  padding: 2rem;
+}
+.img-landscape {
+  max-width: 100%;
+}
+.img-portrait {
+  max-width: 42%;
+}
+.blog-post-images img {
+  margin-bottom: 1rem;
+}
+.blog-post-images img:nth-child(odd) {
+  float: left;
+}
+.blog-post-images img:nth-child(even) {
+  float: right;
+}
+.blog-post-images img:nth-child(3n+0) {
+  margin-left: 20%;
+  max-width: 80%;
+}
+/*
+* Footer
+*/
+
+.blog-footer {
+  padding: 2.5rem 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: .05rem solid #e5e5e5;
+}
+.blog-footer p:last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,26 @@
+{{ if .Params.image }}
+<article class="blog-post">
+  <a href='{{ .Permalink }}' class="blog-post-overlay">
+  {{ $img_src := urls.Parse .Params.image }}
+  {{ if $img_src.Scheme }}
+    <img src="{{ .Params.image }}" class="article-banner" itemprop="image">
+  {{ else }}
+    <img src="{{ (printf "/images/%s" .Params.image) | relURL }}" class="img-fluid blog-post-figure" itemprop="image">
+  {{ end }}
+  <header class="d-flex flex-column justify-content-between blog-post-header">
+    <div class="font-boutique">
+        <h2 class="blog-post-title">{{ .Title }}</h2>
+        {{ if .Params.Location }}
+        <p class="align-self-end blog-post-meta"><small>&#xFE68;{{ .Params.Location | markdownify }}</small></p>
+        {{ end }}
+    </div>
+    {{ if .Params.Subtitle }}
+    <p class="align-self-end text-right blog-post-meta">{{ .Params.Subtitle | markdownify }}</p>
+    {{ end }}
+    {{ if .Params.Rooms }}
+    <p class="blog-post-meta font-boutique"><small>&#xFE68;{{ .Params.Rooms | markdownify }} chambres</small></p>
+    {{ end }}
+  </header>
+ </a>
+</article> <!-- /.blog-post-item -->
+{{ end }}

@@ -1,0 +1,17 @@
+{{ partial "head" . }}
+{{ partial "icons" . }}
+{{ block "masthead" . }}
+  {{ partial "nav" . }}
+{{ end }}
+{{ block "body" . }}
+  <div class="container body-content">
+    <div class="row">
+      <div class="col-sm-12 blog-main">
+        {{ block "main" . }}
+        <!-- The part of the page that begins to differ between templates -->
+        {{ end }}
+      </div> {{ "<!-- /.blog-main -->" | safeHTML }}
+    </div> {{ "<!-- /.row -->" | safeHTML }}
+  </div> {{ "<!-- /.container -->" | safeHTML }}
+{{ end }}
+{{ partial "footer" . }}

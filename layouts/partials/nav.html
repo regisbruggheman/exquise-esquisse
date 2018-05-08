@@ -1,0 +1,29 @@
+<div class="navbar navbar-expand-lg fixed-top">
+  <a class="navbar-brand" href="{{ .Site.BaseURL }}">
+    <p class="logo-name">Julie Gauthron</p>
+    <img src="/images/logo.png" alt="" class="img-fluid navbar-brand-img">
+    <p class="logo-sutitle">Global Design Agency</p>
+  </a>
+  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="icon-bar top-bar"></span>
+    <span class="icon-bar middle-bar"></span>
+    <span class="icon-bar bottom-bar"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbar-menu">
+    <nav class="nav ml-auto blog-nav">
+      <a class="nav-link {{ if .IsHome }}active{{ end }}" href="{{ .Site.BaseURL | absLangURL }}">{{ i18n "home" }}</a>
+      {{- $currentPage := . -}}
+      {{ range .Site.Menus.navbar }}
+      {{ $menuURL := .URL | absLangURL }}
+      <a class="nav-link{{ if or ($currentPage.IsMenuCurrent "navbar" .) ($currentPage.HasMenuCurrent "navbar" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+      {{ end }}
+      <a class="nav-link" href="https://www.facebook.com/exquiseesquisse72" target="_blank">
+        <svg class="ion ion-social-facebook"><use xlink:href="#ion-social-facebook"></use></svg>
+      </a>
+      <a class="nav-link" href="https://www.instagram.com/juliegauthron/" target="_blank">
+        <svg class="ion ion-social-instagram">
+          <use xlink:href="#ion-social-instagram"></use>
+        </svg></a>
+      </nav>
+    </div>
+  </div>
